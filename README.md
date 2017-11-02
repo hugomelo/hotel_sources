@@ -16,11 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install hotel_sources git://github.com/hugomelo/hotel_sources.git
+    $ git clone git://github.com/hugomelo/hotel_sources.git
+    $ cd hotel_sources
+    $ rake install:local
 
 ## Usage
 
-./hotel_sources "Hotel California"
+    $ ./hotel_sources "Hotel California"
 
 ## Contributing
 
