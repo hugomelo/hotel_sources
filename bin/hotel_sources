@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+#
+#TODO: Add option to print only one source
+
+require "bundler/setup"
+require "hotel_sources"
+require "hotel_sources/version"
+require "hotel_sources/cli"
+require 'optparse'
+
+opt_parser = OptionParser.new do |opt|
+  opt.banner = 'Usage: hotel_sources "Hotel name"'
+
+  opt.separator ""
+  opt.separator "Options"
+
+  opt.on("-v","--version", "Prints the current version") do
+    puts HotelSources::VERSION
+    exit
+  end
+  opt.on("-h","--help","Prints help") do
+    puts opt_parser
+    exit
+  end
+
+end
+
+opt_parser.parse!
+
+HotelSources::CLI.run(ARGV.join(" "))
