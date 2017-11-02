@@ -13,9 +13,9 @@ module HotelSources
     end
 
     def to_s
-      @queue.each do |item|
-        puts "#{item['url']} for #{item['name']}
-      end
+      @queue.collect do |item|
+        "#{item[:url]} for #{item[:name]}"
+      end.join("\n")
     end
   end
 end

@@ -1,6 +1,7 @@
 require_relative 'models/tripadvisor'
 require_relative 'models/booking'
 require_relative 'models/holiday_check'
+require_relative 'url_queue'
 
 module HotelSources
 
@@ -14,7 +15,7 @@ module HotelSources
       # load the generic queue to hold the urls
       queue = HotelSources::UrlQueue.new
 
-      sources = %w[Tripadvisor] if sources.nil?
+      sources = %w[Tripadvisor Booking HolidayCheck] if sources.nil?
       threads = []
 
       sources.each do |source|
